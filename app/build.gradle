@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "br.com.digitalhouse.desafiomarveldh"
-        minSdkVersion 21
+        minSdkVersion 15
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -15,6 +15,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
@@ -28,7 +33,12 @@ dependencies {
     // ViewModel and LiveData
     implementation "androidx.lifecycle:lifecycle-extensions:2.0.0"
     implementation "androidx.lifecycle:lifecycle-common-java8:2.0.0"
+    implementation 'com.google.guava:guava:27.0.1-android'
     implementation "androidx.lifecycle:lifecycle-reactivestreams:2.0.0"
+
+    implementation "androidx.room:room-runtime:2.1.0"
+    annotationProcessor "androidx.room:room-compiler:2.1.0"
+    implementation "androidx.room:room-rxjava2:2.1.0"
 
     /*############################ Gson: Json Converter ##########################*/
     implementation "com.google.code.gson:gson:2.8.5"
@@ -53,6 +63,8 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
 
 
 }

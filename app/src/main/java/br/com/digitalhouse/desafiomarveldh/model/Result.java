@@ -1,11 +1,17 @@
 
 package br.com.digitalhouse.desafiomarveldh.model;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.util.List;
 import com.google.gson.annotations.Expose;
 
-
+@Entity(tableName = "result")
 public class Result {
+
+    @PrimaryKey(autoGenerate = true)
+    private long key;
 
     @Expose
     private Characters characters;
@@ -61,6 +67,8 @@ public class Result {
     private String upc;
     @Expose
     private List<Url> urls;
+    @Expose
+    private List<Result> results;
     @Expose
     private String variantDescription;
     @Expose
@@ -212,6 +220,10 @@ public class Result {
 
     public List<Price> getPrices() {
         return prices;
+    }
+
+    public List<Result> getResults() {
+        return results;
     }
 
     public void setPrices(List<Price> prices) {
