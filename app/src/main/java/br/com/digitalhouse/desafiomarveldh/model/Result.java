@@ -10,6 +10,18 @@ import com.google.gson.annotations.Expose;
 @Entity(tableName = "result")
 public class Result {
 
+    public long getKey() {
+        return key;
+    }
+
+    public void setKey(long key) {
+        this.key = key;
+    }
+
+    public void setResults(List<Result> results) {
+        this.results = results;
+    }
+
     @PrimaryKey(autoGenerate = true)
     private long key;
 
